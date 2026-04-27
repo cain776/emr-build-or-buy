@@ -308,12 +308,21 @@ body[data-theme="light"] .exec-rationale-label { color: #6b7280; }
 .exec-rationale-body { font-size: 12.5px; color: #dfe2e8; line-height: 1.85; }
 body[data-theme="light"] .exec-rationale-body { color: #1f2937; }
 
-/* ============ Fact / Judgment / Recommendation tags ============ */
+/* ============ Source-strength tags (4 levels) + Recommendation ============
+   FACT      — 공식 근거 (정부·법령·KHIS·인증제 공식 자료)
+   INDUSTRY  — 언론·업계 인용 (메디게이트뉴스, 청년의사, 사업자 자체 사이트, 업계 블로그)
+   ESTIMATE  — 당사 추정 (시장 규모 환산, ARPU 추정, 점유율 추정)
+   JUDGMENT  — 당사 판단 (해석·평가·전략 의견)
+   REC       — 권고 (의사결정 권고)                                            */
 .fir-tag { display: inline-block; font-size: 9.5px; font-weight: 800; padding: 2px 7px; border-radius: 3px; letter-spacing: 1px; margin-right: 6px; vertical-align: middle; }
 .fir-tag.fact { background: #1e3a5f; color: #93c5fd; }
+.fir-tag.industry { background: #1c2838; color: #67e8f9; border: 1px solid #155e75; }
+.fir-tag.estimate { background: #2d1f0f; color: #fdba74; border: 1px solid #7c2d12; }
 .fir-tag.judgment { background: #1c2838; color: #fbbf24; border: 1px solid #78350f; }
 .fir-tag.rec { background: #14532d; color: #4ade80; }
 body[data-theme="light"] .fir-tag.fact { background: #dbeafe; color: #1d4ed8; }
+body[data-theme="light"] .fir-tag.industry { background: #cffafe; color: #155e75; border-color: #a5f3fc; }
+body[data-theme="light"] .fir-tag.estimate { background: #ffedd5; color: #9a3412; border-color: #fed7aa; }
 body[data-theme="light"] .fir-tag.judgment { background: #fef3c7; color: #b45309; border-color: #fde68a; }
 body[data-theme="light"] .fir-tag.rec { background: #dcfce7; color: #15803d; }
 

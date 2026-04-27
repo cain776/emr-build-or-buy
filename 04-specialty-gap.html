@@ -78,6 +78,64 @@
   <h3>4.5 안과 특화 EMR 카테고리의 미정립 상태</h3>
   <p>안과는 ① 검사 장비가 다종·고가, ② 영상·시계열 데이터 비중이 큼, ③ 굴절수술 비급여 BOM 관리가 별도 도메인, ④ 임상의가 SW에 까다로움 — 즉 <b>일반·다(多)진료과 통용 EMR 사업자가 본격 투자하기 가장 까다로운 진료과</b>입니다.</p>
 
+  <p style="margin-top:14px">"이미 엠디소프트가 '안과 EMR'을 표방하고 닉스차트도 안과를 다룬다"는 반론에 정면으로 답하기 위해, <b>안과 도메인 네이티브 EMR이 갖춰야 할 6개 축</b>으로 현존 플레이어와 당사 차트 모듈(Stage 2 목표) 사양을 비교합니다. 이 6개 축은 4.3의 일반 EMR 대비 차이(측정·영상·계산·BOM)를 운영 관점으로 다시 묶은 것입니다.</p>
+  <table class="tbl">
+    <thead>
+      <tr>
+        <th style="width:170px">평가 축</th>
+        <th class="red" style="width:130px">엠디소프트 IPlus</th>
+        <th class="red" style="width:130px">닉스차트(포인트닉스)</th>
+        <th class="red" style="width:130px">일반 EMR (유비케어 등)</th>
+        <th class="blue" style="width:170px">B&amp;VIIT 차트 모듈 (Stage 2 목표)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>① 양안(OD/OS) 데이터 모델</b><br><span style="font-size:11.5px;color:#8b92a0">시력/굴절/안압을 좌·우 별도 입력</span></td>
+        <td><span style="color:#f59e0b">△</span> 안과 모듈에서 부분 지원</td>
+        <td><span style="color:#f59e0b">△</span> 안과 화면에서 일부 지원, 다진료과 공용 구조</td>
+        <td><span style="color:#ef4444">✕</span> 일반 측정 필드 (양안 분리 입력 부재)</td>
+        <td><span style="color:#22c55e">○</span> 양안 별도 입력이 디폴트, 표준 데이터 모델로 적재</td>
+      </tr>
+      <tr>
+        <td><b>② OCT/영상 시계열 뷰어</b><br><span style="font-size:11.5px;color:#8b92a0">환자 1인 GB 단위 영상의 시점별 비교</span></td>
+        <td><span style="color:#f59e0b">△</span> '아이차트뷰'로 통합 조회, 시계열 비교 기능 약함</td>
+        <td><span style="color:#ef4444">✕</span> PACS 외부 연동 수준</td>
+        <td><span style="color:#ef4444">✕</span> PACS 외부 연동, 안과 시계열 화면 부재</td>
+        <td><span style="color:#22c55e">○</span> POD 1일/1주/1개월/3·6개월 자동 시점 비교 화면</td>
+      </tr>
+      <tr>
+        <td><b>③ IOL/ICL 도수 계산기 내장</b><br><span style="font-size:11.5px;color:#8b92a0">EVO ICL OCOS, Barrett, Hill-RBF</span></td>
+        <td><span style="color:#ef4444">✕</span> 별도 외부 도구 사용</td>
+        <td><span style="color:#ef4444">✕</span> 별도 외부 도구</td>
+        <td><span style="color:#ef4444">✕</span> 부재</td>
+        <td><span style="color:#22c55e">○</span> 계산기 결과 자동 적재 + 입력값 vs 술 후 결과 차이 추적</td>
+      </tr>
+      <tr>
+        <td><b>④ 비급여 BOM 관리</b><br><span style="font-size:11.5px;color:#8b92a0">VISU+EX500+P.E, SMILE PRO 등 코드별 장비·소모품</span></td>
+        <td><span style="color:#f59e0b">△</span> 일반 비급여 관리 기능</td>
+        <td><span style="color:#f59e0b">△</span> 비급여 관리 기능, BOM 코드 표준화 약함</td>
+        <td><span style="color:#f59e0b">△</span> 일반 비급여 모듈, 안과 BOM 부재</td>
+        <td><span style="color:#22c55e">○</span> 굴절수술 BOM 코드 표준화 + OMS 연동으로 견적·주문·재고까지 정렬</td>
+      </tr>
+      <tr>
+        <td><b>⑤ AI/CRM 연계</b><br><span style="font-size:11.5px;color:#8b92a0">SOAP 자동초안, OCT 보조 판독, 상담 캠페인</span></td>
+        <td><span style="color:#f59e0b">△</span> AI 예약·사전문진·자동접수 부가 기능 (안과 임상 AI는 부재)</td>
+        <td><span style="color:#ef4444">✕</span> 부재</td>
+        <td><span style="color:#ef4444">✕</span> 일반 EMR 차원의 부가 기능 위주</td>
+        <td><span style="color:#22c55e">○</span> LOOCUS 직결 — SOAP 자동초안 + OCT 보조 판독 + EyeChartPro CRM 캠페인 연계</td>
+      </tr>
+      <tr>
+        <td><b>⑥ 다기관 확장성</b><br><span style="font-size:11.5px;color:#8b92a0">신규 안과 오픈 / 해외 체인으로 동일 표준 적용</span></td>
+        <td><span style="color:#f59e0b">△</span> 다수 의료기관 도입 사례, 안과 표준화는 약함</td>
+        <td><span style="color:#f59e0b">△</span> 다진료과 도입, 안과 다기관 표준 운영 부재</td>
+        <td><span style="color:#22c55e">○</span> 다기관 운영은 강점, 안과 표준은 부재</td>
+        <td><span style="color:#22c55e">○</span> B&amp;VIIT 첫 레퍼런스 + VXV·동남아 확장 시 동일 안과 데이터 표준 적용 가능</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:14px;font-size:13px;line-height:1.7"><b>해석:</b> '안과 EMR'을 표방하는 사업자가 있다는 사실과, '안과 워크플로우 전반을 도메인 네이티브로 재설계한 카테고리 리더가 있다'는 사실은 다릅니다. 위 6축 중 ① ② ③ ⑤를 동시에 갖춘 플레이어는 현재 부재하며, 이 영역이 우리가 정의·선점할 카테고리 자리입니다. 단, 6축의 ○ 평가는 <b>Stage 2 목표 사양</b>이며 현 시점 보유 기능이 아닙니다 — 7장(기대 효과)·10장(로드맵)에서 단계별 충족 시점을 명시합니다. <span class="fir-tag judgment">JUDGMENT</span></p>
+
   <p>외부 시그널도 같은 방향을 가리킵니다. 우리만 이 방향을 보고 있는 것이 아닙니다.</p>
   <div class="reason">
     <div class="reason-icon">📰</div>
