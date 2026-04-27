@@ -13,7 +13,7 @@
 
   <div class="verdict">
     <div class="verdict-label">⚡ 결론 (선결)</div>
-    <div class="verdict-title">2026년에는 <b>옵션 C — EyeChartPro CRM에 차트 모듈 확장</b>이 6.4 의사결정 4축을 모두 통과하는 유일한 선택지입니다.</div>
+    <div class="verdict-title">2026년에는 <b>옵션 C — EyeChartPro CRM에 차트 모듈 확장</b>이 6.4 의사결정 4축에서 4개 모두 일정 수준 충족하는 유일한 선택지입니다 — 단, ②실행 가능성과 ④리스크에는 아래 9.3에 명시된 단서가 동반됩니다.</div>
     <div class="verdict-body">
       옵션 A(풀스택)는 ②실행 가능성과 ④리스크에서 무너지고, 옵션 B(안과+외부청구 연동)는 ③ROI와 ②실행 가능성에서 약하며, 옵션 D(부가 솔루션)는 ①전략 적합도가 낮습니다. 단계 점프(C → 풀스택)는 차후 Stage 3에서 재평가합니다.
     </div>
@@ -49,21 +49,21 @@
   <p style="margin-top:10px"><b>판정:</b> 옵션 B는 자산 정합성은 좋지만 <b>'어차피 차트를 자체 개발한다면 그 시작은 EyeChartPro CRM 위에서가 더 유리'</b> → 옵션 C가 더 빠르고 안전한 출발점입니다. B는 C에서 차트 모듈이 자리잡은 후에 청구 외부 위임을 옵션으로 검토할 수 있습니다.</p>
 
   <h3>9.3 선택지 C: EyeChartPro CRM에 차트 모듈 확장 (권고안)</h3>
-  <p>EyeChartPro CRM(예약·상담·재방문 관리)에 <b>차트 영역(SOAP·필차트·이미지·안과 전용 측정 필드)</b>을 모듈로 추가하는 옵션입니다. 청구는 외부 EMR과 연동, 환자/예약은 EyeChartPro가 마스터.</p>
+  <p>EyeChartPro CRM(예약·상담·재방문 관리)에 <b>차트 영역(SOAP·필차트·이미지·안과 전용 측정 필드)</b>을 모듈로 추가하는 옵션입니다. <b>마스터 시스템 분담</b>은 8·10장과 동일 — 환자·예약·청구는 외부 EMR이 마스터, 차트·필차트·안과 측정·영상은 신규 차트 모듈이 마스터. EyeChartPro CRM의 예약·상담은 외부 EMR과 양방향 동기화로 운영됩니다.</p>
   <table class="tbl">
     <thead><tr><th style="width:160px">평가 축</th><th>판정</th><th>근거</th></tr></thead>
     <tbody>
       <tr><td><b>① 전략 적합도</b></td><td><span style="color:#22c55e">○</span> 높음</td><td>차트·검사·영상이 EyeChartPro에 적재됨 → LOOCUS AI와 직결. 데이터 사이클의 핵심 부분이 사내에서 닫힘</td></tr>
-      <tr><td><b>② 실행 가능성</b></td><td><span style="color:#22c55e">○</span> 통과</td><td>이미 운영 중인 EyeChartPro 위 모듈 추가 — 신규 시스템 신규 운영 부담 없음. 베타 의료기관도 사내 자산(B&amp;VIIT)</td></tr>
+      <tr><td><b>② 실행 가능성</b></td><td><span style="color:#f59e0b">△</span> 통과 (단서 있음)</td><td><b>풀스택 대비</b> 신규 시스템 운영 부담은 제한적이고, 베타 의료기관도 사내 자산(B&amp;VIIT). 단 차트·SOAP·필차트·측정값·영상 적재가 시작되는 순간 EyeChartPro는 단순 CRM이 아니라 <b>의무기록성 데이터 운영 영역으로 들어옴</b> — 보안, 환자 동의 구조, 감사로그, 백업·보존 의무가 동반됨</td></tr>
       <tr><td><b>③ ROI</b></td><td><span style="color:#22c55e">○</span> 통과</td><td>데이터 자산화 + 안과 특화 UX + 카테고리 선점 1단계가 동시에 발생. 외부 EMR과 병행 운영이므로 비용 회피는 부분적</td></tr>
-      <tr><td><b>④ 리스크</b></td><td><span style="color:#22c55e">○</span> 통과</td><td>청구는 외부 EMR이 담당 → 청구 사고 리스크가 우리에게 이전되지 않음. 차트 모듈 장애 시 외부 EMR로 폴백 가능 (8.4 폴백 절차 참조)</td></tr>
+      <tr><td><b>④ 리스크</b></td><td><span style="color:#f59e0b">△</span> 통과 (단서 있음)</td><td>청구 영역의 사고 리스크는 외부 EMR이 담당 → 우리에게 이전되지 않음. 차트 모듈 장애 시 외부 EMR로 폴백 가능 (8.4 참조). 단 의무기록 영역의 <b>개인정보 유출·동의 미흡·감사로그 누락</b>은 우리 측 리스크로 새로 발생 — 8.5 컴플라이언스 항목으로 동시 관리 필요</td></tr>
     </tbody>
   </table>
   <div class="reason">
     <div class="reason-icon">✅</div>
     <div class="reason-body">
       <div class="reason-title">옵션 C가 권고안인 이유</div>
-      <div class="reason-text">4축 모두 통과 + <b>안과 특화 EMR 카테고리 진입 1단계</b>로서 의미가 명확. 신규 시스템을 만드는 것이 아니라 이미 운영 중인 EyeChartPro CRM이 본업의 절반(예약·상담)을 이미 처리하고 있다는 사실 위에서 차트 영역만 더하는 구조이므로 진입 비용이 가장 낮음.</div>
+      <div class="reason-text">4축이 모두 일정 수준 충족(②④에는 단서 동반) + <b>안과 특화 EMR 카테고리 진입 1단계</b>로서 의미가 명확. 신규 시스템을 만드는 것이 아니라 이미 운영 중인 EyeChartPro CRM이 본업의 절반(예약·상담)을 이미 처리하고 있다는 사실 위에서 차트 영역만 더하는 구조이므로 <b>풀스택 대비</b> 진입 비용이 낮음 — 단, 차트 영역이 들어오는 순간 의무기록성 데이터 운영 부담(보안·동의·감사로그)은 새롭게 발생함을 9.3 평가표에 명시했습니다.</div>
     </div>
   </div>
 
