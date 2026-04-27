@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>3. EMR 인증제와 규제 환경 — EMR 컨설팅 보고서</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="section-badge">PART 1 · CHAPTER 03</div>
+  <h1>3. EMR 인증제와 규제 환경</h1>
+  <div class="subtitle">자율 인증이지만 사실상 진입조건 — 신규 EMR을 검토할 때 가장 먼저 부딪히는 비기술적 장벽입니다.</div>
+
+  <div class="stats-strip">
+    <div class="stat">
+      <div class="stat-num">59개</div>
+      <div class="stat-label">EMR 2주기 인증기준 항목</div>
+      <div class="stat-sub">기능 27 · 상호운용 20 · 보안 12 (2025.1 시행)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">90 → 59</div>
+      <div class="stat-label">1주기 → 2주기 통합 간소화</div>
+      <div class="stat-sub">단 보안성·상호운용성 기준은 강화</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">자율</div>
+      <div class="stat-label">인증제 법적 성격</div>
+      <div class="stat-sub">의료법 제23조의2 + 시행령 제10조의7~9</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">6~12개월</div>
+      <div class="stat-label">실무 컨설팅 + 인증 준비 기간</div>
+      <div class="stat-sub">KHIS 컨설팅 프로그램 활용 가능</div>
+    </div>
+  </div>
+
+  <h3>3.1 EMR 인증제 개요와 2주기 기준 변화</h3>
+  <p>한국의 EMR 인증제는 의료법 제23조의2 + 시행령 제10조의7~9에 근거한 <b>자율 인증</b>입니다. 미인증 시 시스템 운영 자체는 가능하지만 인증 표시 사용이 금지되며, 실제로는 진료정보교류·공공 연계·대형기관 도입에서 사실상 큰 제약을 받습니다.</p>
+  <ul class="bullet" style="margin-top:8px">
+    <li><b>1주기</b> (2020.7~2024) — 90개 인증 항목. 기능성 중심 평가</li>
+    <li><b>2주기</b> (2025.1 시행~) — 59개 항목으로 통합 간소화. <b>보안성·상호운용성 기준 강화</b></li>
+    <li>관할 — 보건복지부 + 한국보건의료정보원(KHIS) 운영</li>
+    <li>실무 절차 — 사전점검 → 신청 → 사전 문서심사 → 현장심사 → 보완조치 → 인증위원회 심의</li>
+    <li>준비 기간 — 컨설팅 포함 6~12개월. KHIS 컨설팅 프로그램 활용 가능</li>
+  </ul>
+
+  <h3>3.2 기능성 · 상호운용성 · 보안성 요구사항</h3>
+  <p>2주기 59개 항목은 세 영역으로 나뉩니다. 각 영역은 단순 체크리스트가 아니라 <b>EMR이 의원 운영의 백본으로 기능할 수 있는지를 검증</b>하는 평가입니다.</p>
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:140px">영역 (항목 수)</th><th>요구되는 핵심 기능</th><th>주요 포인트</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>기능성 (27)</b></td><td>진료(SOAP) · 처방 · DUR · 의무기록 · 환자안전 · CDSS · 통계</td><td>알레르기 경고, 중복처방 점검, 검체 오인 방지 등 <b>'판단을 도와주는 시스템'</b>이 요구됨. 단순 입력 SW로는 불충분</td></tr>
+      <tr><td><b>상호운용성 (20)</b></td><td>진료정보교류(MyHealthway) · HL7 FHIR · CDA 송수신 · 표준 코드</td><td>2주기에서 <b>가장 강화된 영역</b>. 보건복지부 진료정보교류표준 준수 + FHIR 기반 API 설계가 사실상 필수</td></tr>
+      <tr><td><b>보안성 (12)</b></td><td>권한관리 · 감사로그 · 백업·복구 · 개인정보 비식별화 · 위·변조 방지</td><td>ISMS-P 또는 CSAP 보유 시 일부 항목 면제. 클라우드 EMR은 사실상 보안 인증 보유가 진입조건</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:14px">EMR이 통상적으로 다뤄야 하는 기능 영역은 다음과 같이 매핑되며, 인증 항목은 이들 영역에 골고루 분포합니다.</p>
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:140px">EMR 기능 영역</th><th>주요 메뉴</th><th>인증 매핑 / 포인트</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>업무 관리</b></td><td>접수 / 예약 / 수납 / 보험자격 조회 / 영수증·증명서 발급</td><td>주민번호·외국인 등록, 보험자격 실시간 조회, 본인부담금 계산. 기능성 영역</td></tr>
+      <tr><td><b>진료 (차트)</b></td><td>초·재진 / SOAP / 필차트·이미지 / 처방 / 검사 오더</td><td>진료과별 템플릿 차이 큼(안과는 시력·안압·굴절·OCT 등 별도). 필차트 사실상 필수</td></tr>
+      <tr><td><b>처방·조제</b></td><td>EDI 처방 / DUR / 약가·수가 적용 / 마약·향정 관리</td><td>DUR 실시간 점검 — 기능성 영역의 핵심</td></tr>
+      <tr><td><b>보험 청구</b></td><td>심평원 청구 / 사전 점검 / 삭감 관리 / 비급여 관리</td><td>'청구 사전 점검'이 사실상 시장 표준 기능화. 기능성 영역</td></tr>
+      <tr><td><b>의무기록</b></td><td>진료기록부 / 수술·시술 / 동의서 / 검사결과 / 영상 보관</td><td>법정 보존기간(10년) 준수, 위·변조 방지(전자서명·해시), PACS 영상 연동. 보안성 영역</td></tr>
+      <tr><td><b>장비 연동</b></td><td>OCS / PACS / LIS / 검사장비 직접 연동</td><td>표준은 DICOM·HL7. 안과는 OCT·지형도 등 다국적 장비 다수 — 비표준 케이스 빈번</td></tr>
+      <tr><td><b>환자안전·CDSS</b></td><td>알레르기 경고 / 중복처방 / 검체 오인 방지 / 임상의사결정지원</td><td>기능성 영역의 핵심 평가 항목</td></tr>
+      <tr><td><b>상호운용성</b></td><td>진료정보교류(MyHealthway) / HL7 FHIR / CDA</td><td>2주기에서 강화. FHIR 기반 API 설계가 사실상 필수</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 ISMS-P / CSAP / 청구 SW 보안인증</h3>
+  <p>보안 영역은 EMR 인증제 외에 <b>별도 트랙의 인증</b>이 누적됩니다. 클라우드 모델을 채택하면 이들 보유가 사실상 진입조건이 됩니다.</p>
+  <ul class="bullet" style="margin-top:8px">
+    <li><b>ISMS-P</b> (정보보호 및 개인정보보호 관리체계 인증) — 보유 시 EMR 인증제 보안성 영역 일부 면제</li>
+    <li><b>CSAP</b> (클라우드보안인증) — 공공 영역 및 일부 의료기관 도입 시 요구</li>
+    <li><b>심평원 청구 SW 보안인증</b> — 청구 SW가 별도 갖춰야 하는 보안 요건</li>
+    <li><b>의료기기 SW(SaMD) 인허가</b> — AI 보조 판독·예측 기능을 의료 의사결정에 직접 연결할 경우 식약처 의료기기 인허가 트랙으로 진입</li>
+  </ul>
+
+  <h3>3.4 규제가 신규 진입자에게 주는 의미</h3>
+  <p>규제는 신규 진입자에게 두 방향으로 작용합니다.</p>
+  <div class="reason">
+    <div class="reason-icon">⚠️</div>
+    <div class="reason-body">
+      <div class="reason-title">진입 비용 — '제도적 진입 비용'은 누구에게나 동일</div>
+      <div class="reason-text">59개 인증 항목, 6~12개월 준비기간, ISMS-P/CSAP/청구 SW 보안인증 — <b>일반 EMR이든 진료과 특화 EMR이든 동일하게 부과</b>됩니다. 도메인 특화 자산(임상 데이터·AI·네트워크)은 차별화는 만들어 주지만 제도 비용을 줄여주지는 않습니다.</div>
+    </div>
+  </div>
+  <div class="reason">
+    <div class="reason-icon">🛡️</div>
+    <div class="reason-body">
+      <div class="reason-title">진입 장벽 — 영세 진입자를 자연 도태시키는 필터</div>
+      <div class="reason-text">동시에 이 규제는 <b>'영세 EMR 업체가 지속적인 수가 고시·인증 업데이트 부담을 못 견뎌 폐지하는 구조'</b>의 원인이기도 합니다. 즉 신규 진입자에게는 비용이지만, 일정 규모 이상의 진입자에게는 <b>경쟁자 자연 정리 효과</b>로 작용합니다.</div>
+    </div>
+  </div>
+  <div class="effect">함의: 자체 EMR을 추진하든, 외부 EMR을 도입하든, '인증·청구·보안 비용은 어떤 경우에도 누군가는 지불한다'는 사실이 출발점입니다. 이 비용은 <a href="08-difficulties.html" style="color:#4a9eff;text-decoration:underline">8장 현실적 난이도</a>에서 다시 다룹니다.</div>
+</main>
+<script src="assets/chapters.js"></script>
+<script src="assets/layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>8. 현실적 난이도 — EMR 컨설팅 보고서</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="section-badge">PART 2 · CHAPTER 08</div>
+  <h1>8. 현실적 난이도</h1>
+  <div class="subtitle">EMR을 'CRM에 처방·청구를 더한 것'으로 가볍게 봐서는 안 됩니다 — 6중 부담을 정직하게 점검합니다.</div>
+
+  <h3>8.1 인증제 대응</h3>
+  <div class="challenge">
+    <div class="challenge-head">
+      <span class="challenge-num">[난이도 1]</span>
+      <span class="challenge-title">EMR 인증제 — 자율이지만 사실상 진입조건</span>
+      <span class="sev critical">Critical</span>
+    </div>
+    <div class="challenge-impact">자율 인증이지만 미인증 시 진료정보교류·공공 연계·대형기관 도입에서 사실상 큰 제약</div>
+    <ul>
+      <li>2025년 1월부터 <b>2주기 인증기준이 시행</b>되었으며, 1주기(2020.7~) 90개에서 <b>59개로 통합 간소화</b> — 단 보안성·상호운용성 기준은 강화</li>
+      <li>기능성(27) + 상호운용성(20) + 보안성(12) = 59개 항목에 대해 사전점검 → 신청 → 사전 문서심사 → 현장심사 → 보완조치 → 인증위원회 심의</li>
+      <li>법적 성격은 <b>자율 인증</b>(의료법 제23조의2 + 시행령 제10조의7~9). 미인증 시 인증 표시 사용은 금지되지만 시스템 운영 자체는 가능 — 다만 진료정보교류(MyHealthway), 의료질평가지원금, 종합병원 도입 등에서 사실상 큰 제약</li>
+      <li>실무적으로 <b>컨설팅 + 인증 준비에 6~12개월</b> 소요(KHIS 컨설팅 프로그램 활용 가능)</li>
+    </ul>
+  </div>
+
+  <h3>8.2 청구·DUR·수가 고시 대응</h3>
+  <div class="challenge">
+    <div class="challenge-head">
+      <span class="challenge-num">[난이도 2]</span>
+      <span class="challenge-title">청구 도메인 — 분기·월 단위 변경</span>
+      <span class="sev critical">Critical</span>
+    </div>
+    <div class="challenge-impact">청구 사고는 즉시 매출 손실 + 입소문으로 즉시 확산</div>
+    <ul>
+      <li>심평원 청구 규정·수가·고시는 <b>분기·월 단위로 변경</b>. 반영 지연 시 의료기관 매출이 즉시 깎임 — 청구는 EMR의 가장 민감한 영역</li>
+      <li><b>DUR(의약품 안전사용서비스) 실시간 점검</b>은 2주기 인증 기능성 영역의 핵심. 단순 입력 시스템이 아니라 '판단을 도와주는 시스템'이 요구됨</li>
+      <li><b>비급여 BOM 관리</b> — 안과 굴절수술은 대부분 비급여로, 일반 청구 코드가 아닌 BOM(장비·소모품·약품) 기반 원가/패키지 가격 관리가 필요</li>
+      <li>실무 — <b>청구·수가 전문가 1인 이상 상시 운영 필수</b>(심사평가원 출신, 의료기관 보험팀 출신, 보험청구 컨설턴트 등). 외부 영입에 최소 1년 이상 필요</li>
+    </ul>
+  </div>
+
+  <h3>8.3 안과 장비 연동과 영상 데이터 처리</h3>
+  <div class="challenge">
+    <div class="challenge-head">
+      <span class="challenge-num">[난이도 3]</span>
+      <span class="challenge-title">기술적 난이도 — 데이터 모델 + 동시성 + 장비 + 영상 5중</span>
+      <span class="sev high">High</span>
+    </div>
+    <div class="challenge-impact">표준 부재 + 진료과별 차이 + 영상 GB 단위 누적</div>
+    <ul>
+      <li><b>방대한 데이터 모델</b> — 환자·예약·진료·처방·청구·수납·검사·영상·동의서 등 핵심 엔티티만 수십 개, 부가 테이블 포함 시 수백 개 (참고: SOFTCRM은 676 테이블 구조)</li>
+      <li><b>실시간성·동시성</b> — 접수 카운터, 진료실, 수납, 약국, 검사실이 동일 환자 레코드를 동시에 다룸 → 트랜잭션·락 설계가 까다로움</li>
+      <li><b>장비 연동</b> — DICOM·HL7 외에도 장비 제조사별 비표준 프로토콜 다수. 안과는 다국적 장비(Zeiss, Topcon, Tomey 등) + 진료실당 10종 이상</li>
+      <li><b>영상 처리</b> — 환자 1인당 GB 단위 OCT·각막 토포그래피·안저 사진이 시계열로 누적 — 저장·조회·뷰어 성능이 진료 흐름 좌우</li>
+      <li><b>표준화 부재</b> — 국내에는 EMR 간 데이터 호환 표준이 사실상 없고, HL7·FHIR 대응도 업체별 부분 적용 수준 → 진료정보교류 대응이 별도 부담</li>
+    </ul>
+  </div>
+
+  <h3>8.4 데이터 마이그레이션 및 병행 운영 부담</h3>
+  <div class="challenge">
+    <div class="challenge-head">
+      <span class="challenge-num">[난이도 4]</span>
+      <span class="challenge-title">마이그레이션과 병행 운영 — 진료 중단 회피</span>
+      <span class="sev high">High</span>
+    </div>
+    <div class="challenge-impact">기존 EMR 사용 의료기관을 옮기려면 수십 년치 진료 데이터를 무손실로 옮겨야 함 — 별도 사업 단위</div>
+    <ul>
+      <li><b>마이그레이션 자체가 별도 사업</b> — 기존 EMR의 비표준 스키마, 누락 필드, 비정형 텍스트 등 검증·정제·매핑이 누적</li>
+      <li><b>병행 운영(coexistence) 필수</b> — Stage 2 차트 모듈 도입 시 기존 외부 EMR과 신규 모듈을 일정 기간 병행 운영해야 진료 중단 위험 회피 가능</li>
+      <li><b>마스터 시스템 분담</b> — 환자·예약·청구는 외부 EMR이 마스터 / 차트·필차트·안과 측정 필드는 신규 모듈이 마스터로 분담</li>
+      <li><b>장애 시 폴백(fallback) 절차</b> 사전 정의 — 진료실에서 신규 모듈 장애 시 외부 EMR 단독으로 진료 가능 상태 유지</li>
+      <li><b>Cut-over 시점</b>은 베타 의료기관 운영 데이터 6개월 누적 후 결정</li>
+    </ul>
+  </div>
+
+  <h3>8.5 개인정보·보안·AI 학습 데이터 컴플라이언스</h3>
+  <div class="challenge">
+    <div class="challenge-head">
+      <span class="challenge-num">[난이도 5]</span>
+      <span class="challenge-title">개인정보 · 보안 · 가명처리 · SaMD</span>
+      <span class="sev critical">Critical</span>
+    </div>
+    <div class="challenge-impact">의료정보 유출 1건의 사회적 파급은 EMR 사업 자체를 흔듦</div>
+    <ul>
+      <li><b>1차 활용(진료) vs 2차 활용(AI 학습)</b>은 법적 규율이 다름 — 1차는 의료법, 2차는 개인정보보호법 + 보건의료데이터 활용 가이드라인 + 보건의료데이터법(시행 단계 추적)</li>
+      <li><b>AI 학습 데이터 가명처리(비식별화)</b> 프로세스 구축 필수 — 직접식별자 제거 + 간접식별자 가공 + 결합 위험 평가. 외부 위탁 시 데이터심의위원회 심의</li>
+      <li><b>환자 동의 구조 분리</b> — 일반 진료 동의서와 별도로 2차 활용·AI 학습 동의서 양식 사전 설계</li>
+      <li><b>모델 검증·감사로그</b> — AI 산출 보조 판독·예측은 임상의 최종 결정 보조로 한정. 모든 AI 추론에 사용자·시점·입력·출력 감사로그 보관</li>
+      <li><b>SaMD 인허가 분류 필수</b>(9.5 참조) — 단순 기록 보조는 비의료기기, 임상 판단 보조는 의료기기 인허가 검토 대상</li>
+      <li><b>ISMS-P / CSAP 보안 인증</b>을 사전 확보 — 클라우드 모델에서 사실상 진입조건</li>
+    </ul>
+  </div>
+
+  <h3>8.6 운영·CS·장애 대응 조직 부담</h3>
+  <div class="challenge medium">
+    <div class="challenge-head">
+      <span class="challenge-num">[난이도 6]</span>
+      <span class="challenge-title">운영 — 진료 시간에 절대 멈추면 안 되는 시스템</span>
+      <span class="sev medium">Medium</span>
+    </div>
+    <div class="challenge-impact">진입 장벽 + 시장 규모 한계 + 브랜드 신뢰 — 손익분기까지 거리가 김</div>
+    <ul>
+      <li><b>진입 장벽</b> — 상위 사업자는 부가서비스 매출 기반으로 EMR을 사실상 저가·번들로 공급. 신규 진입자가 EMR 단독 매출만으로 손익 맞추기 어려움</li>
+      <li><b>총 시장 규모 한계</b> — 의원급 전체 시장이 연 2,000~3,000억 원 수준. 1% 점유 = 약 20~30억 원. 손익분기까지의 거리가 김</li>
+      <li><b>브랜드·신뢰</b> — 의료진은 쓰던 EMR로 옮기는 것을 극히 꺼리며, 청구 사고 1건이 곧바로 입소문으로 확산</li>
+      <li><b>의료진 요구사항의 동적 변경</b> — '써 보고 나서' 요구사항을 바꾸는 것이 일반적. 영세 EMR 업체들이 지속적인 업데이트 부담을 못 견뎌 폐지하는 구조적 문제</li>
+      <li><b>24/7 진료 중단 회피</b> — EMR은 진료 시간에 절대 멈추면 안 되는 시스템. 운영·CS·장애 대응 인력의 상시 운영 비용이 누적</li>
+    </ul>
+  </div>
+
+  <div class="closing" style="margin-top:32px">8장의 6중 부담은 옵션 A(풀스택 자체 개발)에서 모두 동시에, 옵션 C(차트 모듈 확장)에서는 일부만 부과됩니다.<br>이 차이가 9장 선택지 논증의 핵심 근거입니다.</div>
+</main>
+<script src="assets/chapters.js"></script>
+<script src="assets/layout.js"></script>
+</body>
+</html>

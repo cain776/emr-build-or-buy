@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>6. 검토 배경과 의사결정 기준 — EMR 컨설팅 보고서</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="section-badge">PART 2 · CHAPTER 06</div>
+  <h1>6. 검토 배경과 의사결정 기준</h1>
+  <div class="subtitle">2부의 출발선 — 왜 지금 EMR을 검토하는지, 그리고 이후 모든 옵션을 무엇으로 평가할 것인지를 먼저 정의합니다.</div>
+
+  <h3>6.1 왜 지금 EMR을 검토하는가</h3>
+  <p>EMR 자체 개발 검토는 단순한 '도구 교체' 문제가 아닙니다. 다음 세 가지 흐름이 동시에 발생하면서 검토 시점이 도래했습니다.</p>
+  <ul class="bullet" style="margin-top:8px">
+    <li><b>① 진료 데이터 통제권 문제</b> — B&amp;VIIT 진료 데이터가 외부 EMR에 종속될수록, AI 모델 학습·검증·내부 분석에 필요한 데이터 추출이 벤더 협조에 의존하게 됨</li>
+    <li><b>② 사내 자산의 정합성</b> — EyeChartPro CRM, LOOCUS AI, OMS 렌즈주문, VXV(베트남) 채널이 별도 시스템으로 운영되고 있어, EMR이 허브 역할을 하지 않으면 통합 워크플로우 부재</li>
+    <li><b>③ 외부 시그널</b> — 1부 5.2에서 본 '안과 특화 EMR 카테고리 미정립' + 여의도성모안과의 AI EMR 발표 — 시장이 이 자리를 인정하기 시작</li>
+  </ul>
+
+  <h3>6.2 B&amp;VIIT / 비쥬웍스 관점의 전략적 의미</h3>
+  <p>외부에서 EMR 사업을 보는 시각과 우리가 EMR을 보는 시각은 다릅니다. 우리에게 EMR은 '의료 IT 사업 한 줄'이 아니라 <b>다음 자산들이 한 워크플로우로 연결되는 허브</b>입니다.</p>
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:160px">자산</th><th>현재 위치</th><th>EMR이 허브가 됐을 때</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>B&amp;VIIT 진료 데이터</b></td><td>외부 EMR 안에 잠재 (추출 비표준)</td><td>FHIR 기반 표준 모델로 자체 보관 — AI 학습/검증 파이프라인 안정화</td></tr>
+      <tr><td><b>LOOCUS AI</b></td><td>독립 모듈, 진료 워크플로우 외부</td><td>차트·검사·수술기록 컨텍스트 직결 — SOAP 자동초안·OCT 보조 판독·결과 예측</td></tr>
+      <tr><td><b>EyeChartPro CRM</b></td><td>예약·상담·재방문 관리</td><td>차트 영역(SOAP·필차트·안과 측정 필드)을 모듈로 흡수 — 안과 EMR 카테고리 진입 1단계</td></tr>
+      <tr><td><b>OMS (렌즈 발주)</b></td><td>독립 시스템</td><td>수술 BOM(VISU+EX500+P.E, SMILE PRO) → 견적 → 주문 → 재고가 한 워크플로우로 정렬</td></tr>
+      <tr><td><b>VXV(베트남) 채널</b></td><td>현지 운영, 한국 본사 시스템 미연동</td><td>'한국식 굴절수술 노하우 + AI + EMR/CRM' 패키지 수출 후보</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6.3 단순 비용 절감이 아닌 데이터·AI·플랫폼 전략의 문제</h3>
+  <p>EMR 자체 보유의 의미는 '외부 EMR 라이선스 비용 절감'이 아닙니다. 진짜 의미는 <b>다음 사이클이 닫히는가</b>입니다.</p>
+  <div class="reason">
+    <div class="reason-icon">🔄</div>
+    <div class="reason-body">
+      <div class="reason-title">데이터 → AI → 진료 보조 → 데이터 품질 사이클</div>
+      <div class="reason-text">B&amp;VIIT 진료 → 자체 EMR 데이터 적재 → LOOCUS AI 학습/검증 → AI가 다음 진료를 보조 → 데이터 품질 상승 → 모델 품질 상승. <b>이 사이클은 외부 EMR 위에 연동 한 칸으로는 닫히지 않습니다</b> — 추출 표준 부재, 벤더 협조 의존, 데이터 권한 분쟁 가능성 때문입니다.</div>
+    </div>
+  </div>
+  <div class="effect">함의: 자체 EMR 검토의 평가 척도는 '비용 절감 ROI'가 아니라 <b>'데이터 사이클이 사내에서 닫히는가'</b>여야 합니다. 이는 다음 6.4 의사결정 기준의 첫 번째 축이 됩니다.</div>
+
+  <h3>6.4 의사결정 기준 — 4축</h3>
+  <p>2부의 모든 선택지(7~11장)는 다음 4축으로 평가합니다. 한 축에서 매력적이어도 다른 축에서 무너지면 추진하지 않습니다.</p>
+
+  <div class="diff-grid">
+    <div class="diff">
+      <div class="diff-num">① 전략 적합도</div>
+      <div class="diff-title">자산이 정렬되는가</div>
+      <div class="diff-text">B&amp;VIIT 임상 데이터, LOOCUS AI, EyeChartPro/OMS, VXV 채널이 이 옵션 위에서 한 워크플로우로 연결되는가. <b>'우리가 아니면 누구도 못하는가'에 가까울수록 적합도가 높음</b>. 단순 비용 절감용 옵션은 적합도가 낮습니다.</div>
+    </div>
+    <div class="diff">
+      <div class="diff-num">② 실행 가능성</div>
+      <div class="diff-title">한 해 안에 추진 가능한가</div>
+      <div class="diff-text">현재 확정된 우선순위(SOFTCRM 현대화, EyeChartPro CRM, LOOCUS, OMS, VXV) 위에서 인력·기간·도메인 인력 영입까지 감당 가능한가. <b>'필요는 한데 한 해 안에 못 한다'면 보류 또는 단계 분할</b>이 답입니다.</div>
+    </div>
+    <div class="diff">
+      <div class="diff-num">③ ROI</div>
+      <div class="diff-title">정성·정량 가치가 비용을 정당화하는가</div>
+      <div class="diff-text">비용 회피 / 신규 매출 / 데이터 자산화 / 글로벌 확장 4축 가치(11장 ROI 프레임)로 평가. 단, 비쥬웍스 컨텍스트에서 가장 중요한 것은 <b>데이터 자산화 — 이것이 외부 옵션으로는 채울 수 없는 유일한 영역</b>입니다.</div>
+    </div>
+    <div class="diff">
+      <div class="diff-num">④ 리스크</div>
+      <div class="diff-title">진료·청구·환자안전 리스크가 통제 가능한가</div>
+      <div class="diff-text">청구 사고, 진료 중단, 환자안전 사고는 <b>입소문으로 즉시 확산 + 의료기관 운영 직격</b>입니다. SaMD 인허가 리스크, 개인정보 유출 리스크, AI 학습 데이터 컴플라이언스 리스크도 같은 등급으로 평가. <b>'기술적으로 가능'과 '안전하게 운영 가능'은 다른 차원</b>입니다.</div>
+    </div>
+  </div>
+
+  <p style="margin-top:18px">이 4축은 단순 채점표가 아니라 <b>거부권 게이트</b>로 작동합니다. ②(실행 가능성)나 ④(리스크)에서 무너지면, ①(전략 적합도)이 아무리 높아도 추진하지 않습니다. 이 원칙이 9장 선택지 논증에서 풀스택(A)을 보류하는 직접적인 근거가 됩니다.</p>
+
+  <div class="closing" style="margin-top:24px">2부의 평가는 항상 <em>4축 동시 충족</em> 여부로 닫습니다.<br>한 축에서 매력적이어도, 다른 축에서 무너지면 추진하지 않습니다.</div>
+</main>
+<script src="assets/chapters.js"></script>
+<script src="assets/layout.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12. 2부 결론 및 권고 — EMR 컨설팅 보고서</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="section-badge">PART 2 · CHAPTER 12</div>
+  <h1>12. 2부 결론 및 권고</h1>
+  <div class="subtitle">2부의 모든 분석을 한 페이지로 닫습니다 — 한 줄 결론 · 단기 권고 · 중장기 권고 · 최종 권고안.</div>
+
+  <div class="verdict">
+    <div class="verdict-label">⚡ 2부 한 줄 결론</div>
+    <div class="verdict-title">2026년에는 <b>풀스택 EMR 자체 개발을 보류</b>하고, <b>차트 모듈 확장(옵션 C)</b>을 위한 연동·표준·인력 기반을 끝내는 한 해로 운영합니다. 풀스택 진입 여부는 2029년 시점에 6.4 4축으로 재평가합니다.</div>
+  </div>
+
+  <h3>12.1 2026년 풀스택 EMR 개발은 보류</h3>
+  <p>풀스택 자체 EMR 개발(옵션 A)은 6.4의 4축 중 ②실행 가능성과 ④리스크에서 무너집니다.</p>
+  <table class="tbl">
+    <thead><tr><th style="width:140px">측면</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td><b>여력 측면</b></td><td>SOFTCRM 현대화(2026 치환 → 2027 PostgreSQL 마이그레이션), EyeChartPro CRM, LOOCUS, OMS, VXV 등 확정된 우선순위 과제만으로도 개발 인력이 사실상 한계 상태</td></tr>
+      <tr><td><b>도메인 측면</b></td><td>청구·DUR·진료정보교류 표준 등 EMR 핵심 도메인 인력이 조직 내에 부재. 외부 영입과 내재화에 최소 1년 이상 필요</td></tr>
+      <tr><td><b>시장 측면</b></td><td>의원급 일반 EMR 시장은 이미 과점·저가화. 단 1부 5.2에서 본 바와 같이 '안과 특화' 카테고리는 비어 있어 중장기 기회는 유효</td></tr>
+      <tr><td><b>리스크 측면</b></td><td>청구 사고·진료 중단·환자안전 사고가 동시에 발생할 표면적 최대. 6~12개월 인증 + 베타 운영 중에도 진료를 멈출 수 없음</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:10px"><b>판정:</b> 옵션 A는 2026년 추진 불가. <b>'영원히 안 한다'가 아니라 Stage 3(2029~) 시점 재평가 옵션</b>으로 보류.</p>
+
+  <h3>12.2 단기 — 연동·표준·차트 모듈 기반부터</h3>
+  <p>2026~2028년 단기 권고는 다음 두 트랙입니다.</p>
+
+  <div class="diff-grid">
+    <div class="diff">
+      <div class="diff-num">2026 STAGE 1</div>
+      <div class="diff-title">연동 기반 + 데이터 표준 + 인력 영입</div>
+      <div class="diff-text">자체 EMR 풀스택 추진 보류. <b>외부 EMR 연동 가능성·비용·계약 구조 조사 완료</b>(11.3, A1) + <b>FHIR R4 기반 안과 데이터 모델 정의</b>(11.4, A2) + <b>청구·수가 전문가 영입 후보 풀 확보</b>(11.5, A3). 신규 시스템(EyeChartPro·LOOCUS·OMS)부터 자체 표준 적용.</div>
+    </div>
+    <div class="diff">
+      <div class="diff-num">2027~28 STAGE 2</div>
+      <div class="diff-title">차트 모듈 확장 (옵션 C)</div>
+      <div class="diff-text">EyeChartPro CRM에 차트 영역(SOAP·필차트·이미지·안과 측정 필드) 모듈 확장. 청구는 외부 EMR 연동. <b>ISMS-P 인증 추진</b>. B&amp;VIIT 첫 레퍼런스 + 추가 안과 1~2곳 베타. <b>안과 특화 EMR 카테고리 진입 1단계</b>.</div>
+    </div>
+  </div>
+
+  <h3>12.3 중장기 — 안과 특화 EMR 카테고리 진입 검토</h3>
+  <p>2029년 이후 Stage 3 진입 여부는 <b>10.4 게이트</b>로 평가합니다 — 단계 진입을 보장하지 않습니다.</p>
+  <ul class="bullet" style="margin-top:8px">
+    <li>Stage 2 차트 모듈이 B&amp;VIIT에서 6개월+ 안정 운영</li>
+    <li>ISMS-P 인증 취득 + 추가 안과 1~2곳 베타 운영 데이터 누적</li>
+    <li>AI 보조 기능(SOAP 자동초안·OCT 보조 판독)이 임상 검증된 상태</li>
+    <li>청구·DUR·진료정보교류 도메인 인력 사내 보유</li>
+    <li>시장 변화 — 안과 특화 카테고리 리더가 다른 사업자에 의해 정의되지 않은 상태</li>
+    <li>사내 여력 — 풀스택 EMR 운영을 감당할 인력·예산 확보</li>
+  </ul>
+  <p style="margin-top:10px">위 조건이 모두 충족되면 <b>옵션 A 풀스택 진입</b>을 검토합니다. 미충족 시 옵션 B(안과+외부 청구 연동) 또는 옵션 C 확장(추가 안과 다수 도입)으로 카테고리 정의권을 유지합니다.</p>
+
+  <h3>12.4 최종 권고안</h3>
+
+  <div class="exec-brief" style="margin-top:18px">
+    <div class="exec-label">📋 최종 권고 — 2026년 결정 사항</div>
+    <h2 class="exec-headline" style="margin:0 0 18px;padding:0;border:0">자체 EMR 풀스택 개발: <span style="color:#fecaca">2026년 보류</span> · 안과 특화 카테고리 <span style="color:#4ade80">단계적 진입 검토</span></h2>
+
+    <div class="exec-grid">
+      <div class="exec-row exec-hold">
+        <div class="exec-row-label">🛑 보류</div>
+        <div class="exec-row-body">옵션 A 풀스택 EMR 자체 개발 — Stage 3 시점 재평가</div>
+      </div>
+      <div class="exec-row exec-do">
+        <div class="exec-row-label">🚀 2026 실행</div>
+        <div class="exec-row-body">Stage 1 — 외부 EMR 연동 조사 / FHIR 표준 적용 / 청구·수가 전문가 영입 트래킹 / 가명처리 정책 v1</div>
+      </div>
+      <div class="exec-row exec-future">
+        <div class="exec-row-label">🔭 2027~28 검토</div>
+        <div class="exec-row-body">Stage 2 — EyeChartPro 차트 모듈 확장 / ISMS-P 인증 / B&amp;VIIT 베타 + 추가 안과 1~2곳</div>
+      </div>
+      <div class="exec-row exec-ask">
+        <div class="exec-row-label">📋 승인 요청</div>
+        <div class="exec-row-body">차기 사업계획에 본 보고서 등록 + 2026년 PoC·조사 범위(11장 A1~A6) 승인</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="final-takeaway">
+    <div class="ft-label">★ Final Takeaway</div>
+    <div class="ft-quote">자체 EMR은 '<em>지금 당장 풀스택 개발</em>'의 문제가 아니라,<br>'<em>안과 특화 카테고리를 우리가 정의할 것인가</em>'의 문제입니다 — 단계적으로 진입하면 가능합니다.</div>
+  </div>
+
+  <p style="margin-top:24px;font-size:13px;color:#8b92a0;line-height:1.7">본 보고서의 모든 수치·인용은 <a href="appendix.html" style="color:#4a9eff;text-decoration:underline">Appendix 참고자료</a>에 출처를 정리했습니다. 후속 회차(2027~28 Stage 2 진입 시점)에서는 본 보고서의 정성 가치 4축을 정량 ROI로 갱신하고, 베타 운영 데이터 기반의 게이트 평가 결과를 별도로 보고합니다.</p>
+</main>
+<script src="assets/chapters.js"></script>
+<script src="assets/layout.js"></script>
+</body>
+</html>
